@@ -46,7 +46,9 @@ def fuelPrice(district):
     # except :
     #     price = {"ERROR 404": "Not Found"}
     
-    return jsonify(price)
+    res = jsonify(price)
+    res.headers.add('Access-Control-Allow-Origin', '*')
+    return res
 
 if __name__ == "__main__":
     app.run()
