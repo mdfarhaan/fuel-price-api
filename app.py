@@ -1,8 +1,11 @@
 from flask import Flask, render_template, jsonify
+from flask_cors import CORS, cross_origin
 import requests
 from bs4 import BeautifulSoup,NavigableString, Comment
 
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app)
 
 @app.route('/')
 def home():
